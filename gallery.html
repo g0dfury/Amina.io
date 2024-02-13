@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Галерея со слайдером</title>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+<style>
+
+    #bg-photo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    background-size: cover;
+}
+    /* Стили для кнопок */
+    .slick-prev, .slick-next {
+        font-size: 24px;
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        cursor: pointer;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+    .slick-prev:hover, .slick-next:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .slick-prev {
+        left: 10px;
+    }
+    .slick-next {
+        right: 10px;
+    }
+    /* Стили для точек-индикаторов */
+    .slick-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+    }
+    .slick-dots li {
+        margin: 0 5px;
+    }
+    .slick-dots li button {
+        font-size: 0;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .slick-dots li button:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    /* Стили для изображений */
+    .slick-slide img {
+        
+        width: 60%;
+        height: auto;
+        border: 2px solid #fff; /* Рамка вокруг изображений */
+        border-radius: 10px; /* Закругленные углы */
+    }
+    /* Стили для фона страницы */
+    body {
+        background-image: url('background.jpg'); /* Замените 'background.jpg' на ваше изображение */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+/* Стили для изображений */
+.slick-slide {
+    text-align: center; /* Центрирование содержимого */
+    margin: 0 auto; /* Выравнивание по центру */
+}
+
+.slick-slide img {
+    display: inline-block; /* Изображения располагаются в ряд */
+    max-width: 100%; /* Изображения не выходят за пределы родительского контейнера */
+    height: auto;
+    border: 2px solid #fff; /* Рамка вокруг изображений */
+    border-radius: 10px; /* Закругленные углы */
+}
+
+</style>
+</head>
+<body>
+    <img autoplay muted loop id="bg-photo" source src="img/serdechki_ogni_svechenie_147987_1920x1080.jpg" >
+    
+
+
+    <div class="gallery">
+        <div>
+            <p class="fig"> <img src="img/1.jpg" alt="Фото 1"></p>
+        </div>
+        <div>
+            <img src="img/2.jpg" alt="Фото 2">
+        </div>
+        <div>
+            <img src="img/3.jpg" alt="Фото 3">
+        </div>
+        <div>
+            <img src="img/4.jpg" alt="Фото 4">
+        </div>
+        <div>
+            <img src="img/5.jpg" alt="Фото 5">
+        </div>
+        <div>
+            <img src="img/6.jpg" alt="Фото 6">
+        </div>
+        <div>
+            <img src="img/7.jpg" alt="Фото 6">
+        </div>
+    </div>
+
+    
+    
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.gallery').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev">‹</button>',
+            nextArrow: '<button type="button" class="slick-next">›</button>',
+            dots: true,
+            adaptiveHeight: true,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
+    });
+</script>
+
+</body>
+</html>
